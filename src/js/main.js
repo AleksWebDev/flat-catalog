@@ -11,6 +11,8 @@ const state = {
 };
 
 
+window.state = state;
+
 // Routes 
 const routes = [
     { path: '/', component: homePage},
@@ -32,6 +34,9 @@ function router(){
     //set current path
     let currentPath = pathArray[0] === '' ? '/' : pathArray[1];
     /* currentPath = currentPath === '' ? '/' : currentPath; */
+
+    //Save route params 
+    state.routeParams = pathArray[2] ? pathArray[2] : '';
     //Chose mathcing Component from router or Error Page
     const { component = errorPage } = findComponentByPath(currentPath, routes) || {};
     

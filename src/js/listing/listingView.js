@@ -16,7 +16,7 @@ function renderCard(object){
     const listingContainer = document.querySelector('#listing-container');
     const markup = `<article class="col-md-4">
     <!-- card -->
-    <a href="object.html" class="card">
+    <a href="#/item/${object.id}" class="card">
         <div class="card__header">
             <div class="card__title">
                 ЖК ${object.complex_name}
