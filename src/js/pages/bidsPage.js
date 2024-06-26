@@ -1,4 +1,8 @@
-export default function(){
-    const markup = `<div class="container"><h1>Bids page</h1></div>`
-    document.querySelector('#app').innerHTML = markup;
+import bids from '../bids/bidsController';
+
+export default function(state){
+    //Очищаем контейнер 
+    document.querySelector('#app').innerHTML = ''; 
+    //зАПУСКАЕМ КОМПОНЕНТ BIDS
+    bids(state);
 }
