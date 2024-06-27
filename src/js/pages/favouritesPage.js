@@ -1,4 +1,5 @@
+import favoritCards from '../favoritCards/favoritCardsController';
 export default function(){
-    const markup = `<div class="container"><h1>Favourites page</h1></div>`
-    document.querySelector('#app').innerHTML = markup;
+    document.querySelector('#app').innerHTML = '';
+    favoritCards(state);
 }
