@@ -4,11 +4,14 @@ import favouritesPage from './pages/favouritesPage';
 import bidsPage from './pages/bidsPage';
 import errorPage from './pages/errorPage';
 import eventEmitter from './utils/eventEmitter';
+import Favorits from './favorits/favoritsModel';
 
 const state = {
     results: [],
     emitter: new eventEmitter(),
+    favourites: new Favorits(),
 };
+
 
 
 window.state = state;

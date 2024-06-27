@@ -10,7 +10,7 @@ export default async function (state){
     await state.singleItem.getItem();
 
     //Отрисовываем разметку для отдельного объекта
-    view.render(state.singleItem.result);  
+    view.render(state.singleItem.result, state.favourites.isFav(state.singleItem.id));  
 
     // ----- Запускаем прослушку событий -------// 
 
@@ -49,5 +49,11 @@ export default async function (state){
                 alert(error);
             });
         }
+    })
+
+    //Прослуша событий для избранного 
+    document.querySelector('.button-favourite').addEventListener('click', function(){
+        state.favourites.toggleFav(state.singleItem.id);
+        view.toggleFavoritButton(state.favourites.isFav(state.singleItem.id));
     })
 }
